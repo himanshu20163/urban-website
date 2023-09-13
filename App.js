@@ -1,22 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './Components/reactjs-urban/Home/Home';
-import Urbanrouting from './Components/reactjs-urban/Urbanrouting';
-// import Photosearch from './Components/Photo-search/Photosearch';
-// import Quiz from './Components/Quiz/Quiz'
+import { Box, Flex } from "@chakra-ui/react";
+import ImageSlider from "./Components/Slider/ImageSlider";
+import { SlideData } from "./Components/Slider/SlideData";
+import banner from "./Components/images/fashion-banner.png";
+import visacard from "./Components/images/visa-card.jpg";
+import Brandslider from "./Components/Brand/Brandslider";
+import Header from "./Components/Header/Noon/src/component/Header/Header";
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App" style={{width:"100%"}}>
-      {/* <Home /> */}
-      <Urbanrouting />
-      {/* <Movieapp /> */}
-       {/* <Photosearch /> */}
-       {/* <Quiz /> */}
-       {/* <Movieapp />  */}
-       
+    <div>
+      <Header />
+      <img src={visacard} width="100%"/>
+      <Flex>
+        <Box flex={2}>
+          <div>
+            <ImageSlider slides={SlideData} />
+          </div>
+        </Box>
+        <Box flex={1}>
+          <div>
+            <img src={banner} width="100%" height="450" style={{ margin: "0px 10px ", height: "210px" }} />
+          </div>
+        </Box>
+      </Flex>
+      <Brandslider />
     </div>
   );
 }
-
-export default App;
